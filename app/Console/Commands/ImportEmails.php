@@ -11,7 +11,7 @@ class ImportEmails extends Command
      *
      * @var string
      */
-    protected $signature = 'emailify:import {pattern}';
+    protected $signature = 'emailify:import {files*}';
 
     /**
      * The console command description.
