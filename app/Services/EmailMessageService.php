@@ -36,10 +36,10 @@ class EmailMessageService
 				$email->date->setTimezone($timezone);
 
 				$email->timezone = $timezone;
-				$email->to = $parser->getHeader('to');
-				$email->from = $parser->getHeader('from');
+				$email->to = trim($parser->getHeader('to'), '<>');
+				$email->from = trim($parser->getHeader('from'), '<>');
 				$email->subject = $parser->getHeader('subject');
-				$email->message_id = $parser->getHeader('message-id');
+				$email->message_id = trim($parser->getHeader('message-id'), '<>');
 
 				$email->save();
 				$success_count++;
