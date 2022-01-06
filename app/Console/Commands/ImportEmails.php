@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
+use App\Services\EmailMessageService;
+
 class ImportEmails extends Command
 {
     /**
@@ -35,8 +37,8 @@ class ImportEmails extends Command
      *
      * @return int
      */
-    public function handle(EmailifyImporter $importer)
+    public function handle(EmailMessageService $service)
     {
-        $importer->import(glob($this->argument('pattern')));
+        $service->import($this->argument('files'));
     }
 }
