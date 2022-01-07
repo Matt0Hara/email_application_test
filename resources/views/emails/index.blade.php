@@ -12,7 +12,7 @@
 
 	</head>
 	<body>
-		<div class="container">
+		<div class="container-fluid">
 			<h1>Emails</h1>
 			<br>
 			<div class="row justify-content-center">
